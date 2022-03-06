@@ -1,13 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DetailComponent } from './detail.component';
-
+import { RouterTestingModule } from '@angular/router/testing';
 describe('DetailComponent', () => {
   let component: DetailComponent;
   let fixture: ComponentFixture<DetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
       declarations: [ DetailComponent ]
     })
     .compileComponents();
@@ -20,6 +24,10 @@ describe('DetailComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should render title', () => {
     expect(component).toBeTruthy();
   });
 });

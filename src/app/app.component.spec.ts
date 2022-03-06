@@ -32,4 +32,11 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.app span')?.textContent).toContain('Application de ouuuf');
   });
+
+  it('should render product', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.app span')?.textContent).toContain('Application de ouuuf');
+  });
 });

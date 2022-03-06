@@ -2,12 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cart, ProductType } from '../provider/models';
 import { PanierService } from '../provider/panier.service';
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+
+  componentName = 'cart';
   @Input('cart') cart: Cart = {};
   idCart?: string;
   constructor(
