@@ -1,0 +1,36 @@
+<div class="test2" style="padding: 10px;">
+  <h1>Mon Panier</h1>
+  <hr>
+  <ol style="margin:20px;">
+
+      <li *ngFor="let item of cart.panierProducts" class="item" style="margin-top: 10px;">
+          <div style="display: flex;">
+              <div>
+                  <div class="img-item">
+                      <img width="50" [src]="item?.product?.imageUrl" alt="shop">
+                  </div>
+                  <div class="detail">
+                      <div> <a [routerLink]="['/product-list', item?.product?.id]"> {{ item?.product?.name }} </a>
+                      </div>
+                      <p>{{ item?.product?.price | currency:'EUR' }}</p>
+                  </div>
+              </div>
+              <div style="margin-left: 10px;">
+                  <button mat-raised-button (click)="onDeleteItem(item.id)">
+                      <mat-icon>delete</mat-icon>
+                      supprimer
+                  </button>
+              </div>
+          </div>
+
+      </li>
+
+  </ol>
+
+
+
+  <!--  <div>
+      <button mat-raised-button color="primary" *ngIf="cart.produits?.length">Valider ma
+          commande</button>
+  </div> -->
+</div>
