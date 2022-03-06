@@ -54,6 +54,15 @@ it("IL Y'a un article dans le panier", () => {
 });
 
 
+it("Supprimé du panier", () => {
+  cy.get(".app")
+    .find("button:first")
+    .click()
+    cy.get(".test5")
+    .click()
+
+});
+
 it('redirect to STORE', () => {
   cy.get(".button2")
 //cy.get('input[name=description]').type('Hello World')
